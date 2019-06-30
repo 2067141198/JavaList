@@ -1,3 +1,6 @@
+/**
+ * 线性表接口
+ */
 public interface List {
 
     /**

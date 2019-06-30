@@ -1,3 +1,6 @@
+/**
+ * 迭代器接口
+ */
 public interface Iterator {
 
     /**

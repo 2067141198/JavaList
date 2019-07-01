@@ -46,6 +46,23 @@ public class ArrayList extends AbstractList implements List {
     }
 
     @Override
+    protected void earseInternal(int index) {
+        for(int i = index; i < size(); i++) {
+            array[i] = array[i + 1];
+        }
+    }
+
+    @Override
+    public int get(int index) {
+        return array[index];
+    }
+
+    @Override
+    public void set(int index, int val) {
+        array[index] = val;
+    }
+
+    @Override
     public Iterator iterator() {
         return new ArrayListIterator(0);
     }

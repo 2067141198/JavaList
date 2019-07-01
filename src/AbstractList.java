@@ -15,6 +15,12 @@ public abstract class AbstractList implements List {
      */
     protected abstract void insertInternal(int index, int val);
 
+    /**
+     * 内部使用，根据下标删除数据
+     * @param index 要删除的数据
+     */
+    protected abstract void earseInternal(int index);
+
     @Override
     public void pushFront(int val) {
         insert(0, val);
@@ -34,6 +40,27 @@ public abstract class AbstractList implements List {
 
         insertInternal(index, val);
         size++;
+    }
+
+    @Override
+    public void popFront() {
+        earse(0);
+    }
+
+    @Override
+    public void popBack() {
+        earse(size);
+    }
+
+    @Override
+    public void earse(int index) {
+        if(index < 0 || index > size) {
+            System.out.println("下标错误！");
+            return;
+        }
+
+        earseInternal(index);
+        size--;
     }
 
     @Override

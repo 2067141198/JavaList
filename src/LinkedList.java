@@ -61,9 +61,15 @@ public class LinkedList extends AbstractList implements List{
     protected void earseInternal(int index) {
 
         if(index == 0) {
-            head = null;
+            head = head.next;
         } else if(index == 1){
-            head.next = null;
+            head.next = head.next.next;
+        } else if(index == size()) {
+            Node cur = head;
+            for (int i = 0; i < index - 1; i++) {
+                cur = cur.next;
+            }
+            cur.next = null;
         } else {
             Node cur = head;
             for (int i = 0; i < index - 1; i++) {

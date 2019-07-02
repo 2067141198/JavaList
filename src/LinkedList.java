@@ -66,7 +66,7 @@ public class LinkedList extends AbstractList implements List{
             head.next = head.next.next;
         } else if(index == size()) {
             Node cur = head;
-            for (int i = 0; i < index - 1; i++) {
+            for (int i = 0; i < index - 2; i++) {
                 cur = cur.next;
             }
             cur.next = null;
